@@ -1,0 +1,112 @@
+.local-iteration-shell {
+  --iteration-ink: #262722;
+  --iteration-muted: #777a72;
+  --iteration-line: #e4e5dd;
+  color: var(--iteration-ink);
+  background: #fffefa;
+  border: 1px solid var(--iteration-line);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgb(48 46 35 / 5%);
+}
+
+.local-iteration-shell__header,
+.local-iteration-shell__inline-form,
+.local-iteration-shell__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.local-iteration-shell__eyebrow {
+  color: var(--iteration-muted);
+  font: 10px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.local-iteration-shell h2 { margin: 3px 0 0; font-size: 20px; font-weight: 600; }
+
+.local-iteration-shell__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #f4eee1;
+  color: #6c5423;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.local-iteration-shell__status i { width: 7px; height: 7px; border-radius: 50%; background: #b78935; }
+.local-iteration-shell__status--working { background: #edf6ed; color: #496249; }
+.local-iteration-shell__status--working i { background: #4c9d62; }
+.local-iteration-shell__status--closed { background: #f1e8e8; color: #7d4c4c; }
+.local-iteration-shell__status--closed i { background: #a06c6c; }
+.local-iteration-shell__notice { margin: 14px 0; color: #64665e; font-size: 12px; line-height: 1.5; }
+.local-iteration-shell__identity { padding: 13px 0; border-top: 1px solid var(--iteration-line); border-bottom: 1px solid var(--iteration-line); }
+.local-iteration-shell label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 600; }
+.local-iteration-shell input,
+.local-iteration-shell textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid #d9dacf;
+  border-radius: 8px;
+  padding: 9px 10px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+}
+
+.local-iteration-shell button { min-height: 44px; border: 1px solid #d8d8ce; border-radius: 8px; padding: 9px 12px; background: #fff; color: inherit; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; }
+.local-iteration-shell button:hover { border-color: #96988d; background: #fbfaf5; }
+.local-iteration-shell button:focus-visible,
+.local-iteration-shell input:focus-visible,
+.local-iteration-shell textarea:focus-visible { outline: 3px solid #6a8fba66; outline-offset: 2px; }
+.local-iteration-shell button:disabled { cursor: default; opacity: .7; }
+.local-iteration-shell__inline-form button { flex: 0 0 auto; }
+.local-iteration-shell__identity small { display: block; margin-top: 6px; color: var(--iteration-muted); font-size: 11px; }
+.local-iteration-shell__summary { justify-content: flex-start; flex-wrap: wrap; padding: 12px 0; color: var(--iteration-muted); font-size: 11px; }
+.local-iteration-shell__summary span + span::before { content: "·"; padding-right: 10px; }
+.local-iteration-shell__lifecycle { display: grid; gap: 8px; padding: 14px 0; border-top: 1px solid var(--iteration-line); border-bottom: 1px solid var(--iteration-line); }
+.local-iteration-shell__lifecycle > button { width: 100%; }
+.local-iteration-shell__lifecycle button.is-secondary { color: #7d4c4c; }
+.local-iteration-shell__checkpoint-row { display: flex; gap: 8px; }
+.local-iteration-shell__checkpoint-row input { min-width: 0; flex: 1; }
+.local-iteration-shell__checkpoint-row button { flex: 0 0 auto; }
+.local-iteration-shell__history { padding: 13px 0; border-top: 1px solid var(--iteration-line); }
+.local-iteration-shell__history h3 { margin: 0 0 9px; font-size: 12px; }
+.local-iteration-shell__history > div { display: grid; gap: 6px; }
+.local-iteration-shell__history button { display: grid; gap: 3px; text-align: left; }
+.local-iteration-shell__history button.is-active { border-color: #999b8e; background: #f4f3ec; cursor: default; }
+.local-iteration-shell__history button small { color: var(--iteration-muted); font-size: 11px; font-weight: 400; }
+.local-iteration-shell__start { padding-top: 3px; }
+.local-iteration-shell__start label span { padding-left: 4px; color: var(--iteration-muted); font-weight: 400; }
+.local-iteration-shell__start textarea { display: block; resize: vertical; margin-bottom: 9px; }
+.local-iteration-shell__start > button,
+.local-iteration-shell__copy { width: 100%; }
+.local-iteration-shell__start > button { background: #262722; border-color: #262722; color: #fff; }
+.local-iteration-shell__start > button:hover { background: #42443c; }
+.local-iteration-shell__copy { margin-top: 8px; }
+.local-iteration-shell__feedback { margin: 9px 0 0; color: var(--iteration-muted); font-size: 11px; line-height: 1.4; overflow-wrap: anywhere; }
+
+.local-iteration-shell__bundle { display: grid; gap: 10px; padding: 14px 0 0; border-top: 1px solid var(--iteration-line); }
+.local-iteration-shell__bundle h3 { margin: 0 0 5px; font-size: 12px; }
+.local-iteration-shell__bundle p { margin: 0; color: var(--iteration-muted); font-size: 11px; line-height: 1.45; }
+.local-iteration-shell__bundle-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.local-iteration-shell__bundle-actions > button,
+.local-iteration-shell__import { flex: 1 1 145px; text-align: center; }
+.local-iteration-shell__import { border: 1px solid #d8d8ce; border-radius: 8px; padding: 9px 12px; background: #fff; color: inherit; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; }
+.local-iteration-shell__import:hover { border-color: #96988d; background: #fbfaf5; }
+.local-iteration-shell__import input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .local-iteration-shell { padding: 14px; }
+  .local-iteration-shell__header { align-items: flex-start; flex-direction: column; }
+  .local-iteration-shell__inline-form { align-items: stretch; flex-direction: column; }
+  .local-iteration-shell__checkpoint-row { align-items: stretch; flex-direction: column; }
+}

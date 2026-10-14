@@ -1,0 +1,22 @@
+.dot-voting-panel { width: min(100% - 28px, 720px); margin: 18px auto 24px; padding: 18px; border: 1px solid #dedee2; border-radius: 16px; background: #fff; box-shadow: 0 4px 16px #0000000b; }
+.dot-voting-panel > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.dot-voting-panel h2 { margin: 3px 0 0; font-size: 21px; }
+.dot-voting-kicker { color: #77777c; font: 10px ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; }
+.dot-voting-state { padding: 5px 8px; border-radius: 999px; color: #666; background: #efeff1; font: 10px ui-monospace, monospace; text-transform: uppercase; }
+.dot-voting-state--open { color: #1d6e3e; background: #dff5e4; }
+.dot-voting-state--closed { color: #fff; background: #272727; }
+.dot-voting-facilitator { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; padding: 13px; border-radius: 12px; background: #f1e8d4; }
+.dot-voting-facilitator strong { font-size: 13px; }.dot-voting-facilitator p { margin: 3px 0 0; color: #666; font-size: 11px; }
+.dot-voting-facilitator button { flex: 0 0 auto; min-height: 42px; padding: 0 14px; border: 1px solid #272727; border-radius: 9px; color: #fff; background: #272727; cursor: pointer; }
+.dot-voting-facilitator button:disabled { opacity: .4; cursor: default; }
+.dot-voting-budget { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: #68686d; font-size: 12px; }.dot-voting-budget strong { color: #272727; }
+.dot-voting-candidates { display: grid; gap: 9px; }
+.dot-voting-candidates article { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px; border: 1px solid #e5e5e8; border-radius: 12px; background: #fafafa; }
+.dot-voting-candidates article.is-leading { border-color: #70b981; background: #eef8f0; }
+.dot-voting-candidate-copy { min-width: 0; }.dot-voting-candidate-copy p { margin: 0 0 4px; overflow-wrap: anywhere; font-size: 14px; }.dot-voting-candidate-copy small { color: #777; }
+.dot-voting-allocation { display: grid; grid-template-columns: 42px 34px 42px; align-items: center; gap: 5px; }.dot-voting-allocation button { min-height: 42px; border: 1px solid #d6d6da; border-radius: 9px; background: #fff; cursor: pointer; font-size: 20px; }.dot-voting-allocation button:disabled { opacity: .35; cursor: default; }.dot-voting-allocation output { text-align: center; font-weight: 700; }
+.dot-voting-candidates article > output { display: grid; min-width: 52px; justify-items: center; font-size: 22px; font-weight: 700; }.dot-voting-candidates article > output small { color: #777; font-size: 9px; font-weight: 400; text-transform: uppercase; }
+.dot-voting-empty { padding: 24px; border: 1px dashed #d6d6da; border-radius: 12px; text-align: center; background: #fafafa; }.dot-voting-empty p, .dot-voting-help { color: #777; font-size: 11px; line-height: 1.45; }.dot-voting-empty p { margin: 5px 0 0; }.dot-voting-help { margin: 12px 0 0; }
+.dot-voting-tie { margin-top: 14px; padding: 13px; border: 1px solid #d98b46; border-radius: 12px; background: #fff7eb; }.dot-voting-tie strong { font-size: 13px; }.dot-voting-tie p { margin: 4px 0 8px; color: #6b5b4b; font-size: 11px; line-height: 1.4; }.dot-voting-tie textarea { width: 100%; box-sizing: border-box; padding: 9px; border: 1px solid #d8c5ae; border-radius: 8px; resize: vertical; font: inherit; font-size: 12px; background: #fff; }
+.dot-voting-completion-errors { margin-top: 14px; padding: 12px 13px; border-radius: 12px; background: #fff0ef; color: #8d3028; font-size: 11px; }.dot-voting-completion-errors strong { font-size: 12px; }.dot-voting-completion-errors ul { margin: 6px 0 0; padding-left: 18px; line-height: 1.5; }
+@media (max-width: 520px) { .dot-voting-panel { width: calc(100% - 24px); padding: 14px; }.dot-voting-facilitator { align-items: stretch; flex-direction: column; }.dot-voting-candidates article { align-items: flex-start; }.dot-voting-allocation { flex: 0 0 auto; } }

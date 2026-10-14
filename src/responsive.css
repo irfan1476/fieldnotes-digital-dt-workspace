@@ -1,0 +1,348 @@
+/*
+ * Responsive and touch overrides for the activity workspace.
+ * Keep this file loaded after canvas.css and participate.css.
+ */
+
+html {
+  min-width: 320px;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+#root,
+.app-shell,
+.participate-view,
+.review-view,
+.facilitate-view {
+  max-width: 100%;
+}
+
+.canvas-heading,
+.canvas-heading > div,
+.participate-header > div,
+.participate-prompt > div,
+.participate-card,
+.review-grid section {
+  min-width: 0;
+}
+
+.canvas-heading p,
+.participate-prompt p,
+.participate-card > p,
+.participate-empty p,
+.review-grid p,
+.inspector p {
+  overflow-wrap: anywhere;
+}
+
+/* Tablet: retain the canvas, but compress navigation and actions around it. */
+@media (min-width: 521px) and (max-width: 820px) {
+  .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand actions"
+      "crumb crumb";
+    gap: 7px 14px;
+    padding-block: 9px;
+    padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+  }
+
+  .brand { grid-area: brand; }
+  .top-actions { grid-area: actions; }
+  .crumb {
+    grid-area: crumb;
+    width: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .canvas-area {
+    padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+  }
+
+  .canvas-heading {
+    min-height: 92px;
+    padding-bottom: 10px;
+  }
+
+  .canvas-heading > div:first-child { max-width: min(70%, 52ch); }
+  .canvas-heading p { line-height: 1.4; }
+  .canvas-wrap {
+    height: calc(100dvh - 230px);
+    min-height: 440px;
+  }
+
+  .participate-header,
+  .participate-region-tabs,
+  .participate-prompt,
+  .participate-composer,
+  .participate-feed {
+    max-width: 680px;
+  }
+}
+
+/* Phone: keep the header quiet and make contribution/navigation controls primary. */
+@media (max-width: 520px) {
+  .topbar {
+    min-height: 52px;
+    flex-wrap: nowrap;
+    padding-block: 8px;
+    padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right));
+  }
+
+  .crumb,
+  .top-actions {
+    display: none;
+  }
+
+  .canvas-area {
+    padding-top: 10px;
+    padding-inline: max(10px, env(safe-area-inset-left)) max(10px, env(safe-area-inset-right));
+  }
+
+  .canvas-heading {
+    align-items: flex-start;
+    min-height: 98px;
+    padding-bottom: 10px;
+  }
+
+  .canvas-heading > div:first-child {
+    min-width: 0;
+    max-width: calc(100% - 104px);
+  }
+
+  .canvas-heading h1 {
+    margin-top: 4px;
+    font-size: clamp(20px, 6.2vw, 24px);
+    line-height: 1.12;
+  }
+
+  .canvas-heading p {
+    display: -webkit-box;
+    overflow: hidden;
+    line-height: 1.35;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .canvas-heading-actions {
+    flex: 0 0 auto;
+  }
+
+  .canvas-heading-actions .button {
+    min-width: 96px;
+    padding-inline: 11px;
+  }
+
+  .canvas-wrap {
+    height: calc(100dvh - 178px - env(safe-area-inset-bottom));
+    min-height: 340px;
+    border-radius: 10px;
+  }
+
+  .workspace-view-switcher {
+    right: max(8px, env(safe-area-inset-right));
+    bottom: calc(6px + env(safe-area-inset-bottom));
+    left: max(8px, env(safe-area-inset-left));
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .workspace-view-switcher::-webkit-scrollbar { display: none; }
+  .workspace-view-switcher button {
+    flex: 0 0 auto;
+    min-width: 72px;
+    padding-inline: 11px;
+  }
+
+  .toolkit-view,.iteration-view,.iteration-report-view { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+
+  .participate-view {
+    padding-top: max(14px, env(safe-area-inset-top));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-bottom: calc(86px + env(safe-area-inset-bottom));
+    padding-left: max(12px, env(safe-area-inset-left));
+  }
+
+  .participate-header {
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .participate-header h1 {
+    max-width: 15ch;
+    font-size: clamp(24px, 7vw, 30px);
+    overflow-wrap: anywhere;
+  }
+
+  .participate-region-tabs {
+    position: sticky;
+    z-index: 10;
+    top: max(4px, env(safe-area-inset-top));
+    box-shadow: 0 4px 14px #0000000d;
+  }
+
+  .participate-region-tabs button {
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  .participate-prompt {
+    gap: 9px;
+    padding: 13px;
+  }
+
+  .participate-composer {
+    margin-bottom: 20px;
+    padding: 12px;
+  }
+
+  .participate-composer > div,
+  .participate-edit-form > div {
+    flex-wrap: wrap;
+  }
+
+  .participate-composer button,
+  .participate-primary-button,
+  .participate-text-button {
+    min-height: 48px;
+  }
+
+  .participate-card {
+    padding: 14px;
+  }
+
+  .participate-card footer {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .participate-author {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .participate-card time { margin-left: auto; }
+
+  .participate-card-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .participate-card-actions label {
+    grid-column: 1 / -1;
+  }
+
+  .participate-card-actions select,
+  .participate-card-actions button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .participate-mobile-nav {
+    padding-right: max(8px, env(safe-area-inset-right));
+    padding-bottom: calc(5px + env(safe-area-inset-bottom));
+    padding-left: max(8px, env(safe-area-inset-left));
+  }
+
+  .participate-mobile-nav button {
+    min-width: 0;
+    min-height: 52px;
+  }
+
+  .review-view {
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-left: max(12px, env(safe-area-inset-left));
+  }
+
+  .review-view > header { margin-bottom: 16px; }
+  .review-grid section { padding: 14px; }
+
+  .facilitate-view {
+    padding-top: max(16px, env(safe-area-inset-top));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+    padding-left: max(12px, env(safe-area-inset-left));
+  }
+
+  .facilitator-shortcut {
+    top: auto;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Short touch screens and landscape phones need usable board height without a forced scroll wall. */
+@media (max-width: 932px) and (orientation: landscape) and (max-height: 520px) {
+  .topbar,
+  .canvas-heading p,
+  .canvas-heading .eyebrow {
+    display: none;
+  }
+
+  .canvas-area {
+    padding-top: max(8px, env(safe-area-inset-top));
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .canvas-heading {
+    min-height: 52px;
+    align-items: center;
+  }
+
+  .canvas-heading h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .canvas-wrap {
+    height: calc(100dvh - 68px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height: 240px;
+  }
+
+  .participate-view {
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
+
+  .participate-header { margin-bottom: 10px; }
+  .participate-header h1 { font-size: 24px; }
+  .participate-prompt { padding-block: 10px; }
+  .participate-composer textarea { min-height: 68px; }
+}
+
+@media (pointer: coarse) {
+  button,
+  select,
+  textarea,
+  input {
+    touch-action: manipulation;
+  }
+
+  .button,
+  .workspace-view-switcher button,
+  .participate-view button,
+  .participate-view select {
+    min-height: 44px;
+  }
+
+  .canvas-wrap {
+    overscroll-behavior: contain;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

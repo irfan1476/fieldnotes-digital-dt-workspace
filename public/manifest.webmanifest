@@ -1,0 +1,17 @@
+{
+  "name": "FieldNotes - Digital DT Workspace",
+  "short_name": "FieldNotes",
+  "description": "A collaborative digital workspace for design thinking teams.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f8",
+  "theme_color": "#202a3a",
+  "icons": [
+    {
+      "src": "/fieldnotes-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

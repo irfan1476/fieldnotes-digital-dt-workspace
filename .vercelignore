@@ -1,0 +1,5 @@
+# Source documentation is not needed to build or serve the application.
+*.md
+
+# Local research and validation artifacts; never include these in deployments.
+tmp/
